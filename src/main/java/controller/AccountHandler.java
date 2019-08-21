@@ -216,4 +216,34 @@ public class AccountHandler {
         }
         return data;
     }
+    
+     public ArrayList<Object[]> searchNameForTable(String name){
+        String sql ="SELECT * FROM account WHERE name like \"%"+name+"%\";";
+        ResultSet rs = dbConn.select(sql);
+        ArrayList<Object[]> data = new ArrayList<>();
+        try {
+            while (rs.next()) {
+                Object tmp[] = {rs.getLong(1), rs.getString(2), rs.getLong(3), rs.getDouble(4), rs.getString(5).charAt(0)};
+                data.add(tmp);
+            }
+        } catch (SQLException sQLException) {
+           return null;
+        }
+        return data;
+    }
+     
+     public Object[] searchAccNoForTable(long accountNumber){
+
+        String sql ="SELECT * FROM account WHERE accountnumber ="+accountNumber+";";
+        ResultSet rs = dbConn.select(sql);
+        try{
+            while(rs.next()){
+                Object tmp[] = {rs.getLong(1), rs.getString(2), rs.getLong(3), rs.getDouble(4), rs.getString(5).charAt(0)};
+                return tmp;
+            }
+        } catch (SQLException sQLException) {
+           return null;
+        }
+        return null;
+    }
 }

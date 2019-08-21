@@ -57,6 +57,7 @@ public class MainForm extends javax.swing.JFrame {
 
         jMenu1.setText("Accounts");
 
+        jCreateAccount.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
         jCreateAccount.setText("Create New Account");
         jCreateAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,22 +66,47 @@ public class MainForm extends javax.swing.JFrame {
         });
         jMenu1.add(jCreateAccount);
 
+        jDeleteAccount.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
         jDeleteAccount.setText("Delete Account");
+        jDeleteAccount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jDeleteAccountActionPerformed(evt);
+            }
+        });
         jMenu1.add(jDeleteAccount);
 
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Operations");
 
+        jWithdraw.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_MASK));
         jWithdraw.setText("Withdraw");
+        jWithdraw.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jWithdrawActionPerformed(evt);
+            }
+        });
         jMenu2.add(jWithdraw);
 
+        jDeposit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_MASK));
         jDeposit.setText("Deposit");
+        jDeposit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jDepositActionPerformed(evt);
+            }
+        });
         jMenu2.add(jDeposit);
 
+        jSearch.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         jSearch.setText("Search Account by Name");
+        jSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSearchActionPerformed(evt);
+            }
+        });
         jMenu2.add(jSearch);
 
+        jListAll.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
         jListAll.setText("List All Accounts");
         jListAll.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,6 +119,7 @@ public class MainForm extends javax.swing.JFrame {
 
         jMenu3.setText("System");
 
+        jExit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_MASK));
         jExit.setText("Exit");
         jExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,6 +164,34 @@ public class MainForm extends javax.swing.JFrame {
         dskPane.add(list);
         list.setVisible(true);
     }//GEN-LAST:event_jListAllActionPerformed
+
+    private void jSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSearchActionPerformed
+        // TODO add your handling code here:
+        ListAccountByNameView list = new ListAccountByNameView(dskPane);
+        dskPane.add(list);
+        list.setVisible(true);
+    }//GEN-LAST:event_jSearchActionPerformed
+
+    private void jWithdrawActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jWithdrawActionPerformed
+        // TODO add your handling code here:
+        WithdrawView wv = new WithdrawView(dskPane);
+        dskPane.add(wv);
+        wv.setVisible(true);
+    }//GEN-LAST:event_jWithdrawActionPerformed
+
+    private void jDepositActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDepositActionPerformed
+        // TODO add your handling code here:
+        DepositView dv = new DepositView(dskPane);
+        dskPane.add(dv);
+        dv.setVisible(true);
+    }//GEN-LAST:event_jDepositActionPerformed
+
+    private void jDeleteAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDeleteAccountActionPerformed
+        // TODO add your handling code here:
+        DeleteAccView dav = new DeleteAccView(dskPane);
+        dskPane.add(dav);
+        dav.setVisible(true);
+    }//GEN-LAST:event_jDeleteAccountActionPerformed
 
     /**
      * @param args the command line arguments

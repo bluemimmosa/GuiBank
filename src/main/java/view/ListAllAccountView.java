@@ -57,8 +57,7 @@ public class ListAllAccountView extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setClosable(true);
-        setMaximizable(true);
-        setResizable(true);
+        setIconifiable(true);
         setTitle("All Accounts List");
 
         tblAllAccounts.setModel(new javax.swing.table.DefaultTableModel(
